@@ -1,0 +1,64 @@
+# AI技术资讯来源配置
+news_sources:
+  - name: "AI News"
+    url: "https://artificialintelligence-news.com/feed/"
+    type: "rss"
+    category: "general"
+    language: "en"
+  - name: "MIT Technology Review AI"
+    url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/"
+    type: "rss"
+    category: "research"
+    language: "en"
+  - name: "Towards Data Science"
+    url: "https://towardsdatascience.com/feed"
+    type: "rss"
+    category: "data-science"
+    language: "en"
+  - name: "AI Alignment Forum"
+    url: "https://www.alignmentforum.org/rss.xml"
+    type: "rss"
+    category: "alignment"
+    language: "en"
+  - name: "DeepLearning.AI Blog"
+    url: "https://www.deeplearning.ai/blog/feed/"
+    type: "rss"
+    category: "education"
+    language: "en"
+  - name: "OpenAI Blog"
+    url: "https://openai.com/blog/rss.xml"
+    type: "rss"
+    category: "research"
+    language: "en"
+
+# LLM API排行榜配置
+llm_rankings:
+  - name: "LMSYS Chatbot Arena"
+    url: "https://chat.lmsys.org/api/leaderboard"
+    type: "api"
+    category: "arena"
+  - name: "Hugging Face Open LLM Leaderboard"
+    url: "https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard"
+    type: "web"
+    category: "benchmark"
+  - name: "Papers With Code Leaderboard"
+    url: "https://paperswithcode.com/sota"
+    type: "web"
+    category: "benchmark"
+
+# 通知配置
+notification:
+  enabled: true
+  method: "qq"
+  qq:
+    bot_id: "your_qq_bot_id"
+    group_id: "your_qq_group_id"
+    api_key: "your_qq_api_key"
+
+# 数据存储配置
+storage:
+  base_dir: "./data"
+  format: "markdown"
+  max_days: 30
+  backup_enabled: true
+  backup_dir: "./backup"
