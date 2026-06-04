@@ -1,0 +1,40 @@
+# AI技术资讯收集和推送系统依赖包
+# 注意：asyncio 是 Python 标准库，不需要 pip 安装
+
+# RSS 解析
+feedparser>=6.0.10
+
+# HTTP 请求
+requests>=2.31.0
+
+# 异步 HTTP（用于并发抓取全文）
+aiohttp>=3.9.0
+
+# 定时任务（外部调度使用 Windows 任务计划，schedule 库仅作 fallback）
+schedule>=1.2.0
+
+# YAML 配置
+PyYAML>=6.0.1
+
+# Markdown 处理
+markdown>=3.5.1
+
+# 日期时间处理
+python-dateutil>=2.8.2
+
+# 进度条
+tqdm>=4.66.1
+
+# JSON 处理
+simplejson>=3.19.1
+
+# 日志处理
+colorlog>=6.7.0
+
+# HTML 解析（提取 RSS 摘要中的标签/链接）
+beautifulsoup4>=4.12.0
+
+# 开发依赖（测试 + lint）
+# pytest>=7.4.0
+# pytest-asyncio>=0.23.0
+# ruff>=0.1.0

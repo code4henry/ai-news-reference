@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-news-collector"
+version = "2.0.0"
+description = "AI 技术资讯收集和推送系统（RSS + LLM 排行榜）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "feedparser>=6.0.10",
+    "requests>=2.31.0",
+    "aiohttp>=3.9.0",
+    "schedule>=1.2.0",
+    "PyYAML>=6.0.1",
+    "markdown>=3.5.1",
+    "python-dateutil>=2.8.2",
+    "tqdm>=4.66.1",
+    "simplejson>=3.19.1",
+    "colorlog>=6.7.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+ai-news-collector = "ai_news_collector.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["src/ai_news_collector/scripts"]
+addopts = "-v --tb=short"
