@@ -4,6 +4,7 @@
 timezone: "Asia/Hong_Kong"
 
 news_sources:
+  # ---- 英文主流 AI 资讯 ----
   - name: "AI News"
     url: "https://artificialintelligence-news.com/feed/"
     type: "rss"
@@ -14,29 +15,74 @@ news_sources:
     type: "rss"
     category: "research"
     language: "en"
-  - name: "Towards Data Science"
-    url: "https://towardsdatascience.com/feed"
+
+  # ---- 中文科技媒体 ----
+  - name: "36氪"
+    url: "https://36kr.com/feed"
     type: "rss"
-    category: "data-science"
-    language: "en"
-  - name: "AI Alignment Forum"
-    url: "https://www.alignmentforum.org/feed.xml"
+    category: "tech"
+    language: "zh"
+  - name: "雷锋网"
+    url: "https://www.leiphone.com/feed"
     type: "rss"
-    category: "alignment"
-    language: "en"
-  - name: "DeepLearning.AI The Batch"
-    url: "https://charonhub.deeplearning.ai/rss/"
+    category: "tech"
+    language: "zh"
+
+  # ---- 美股大厂官方博客 ----
+  - name: "NVIDIA Blog"
+    url: "https://blogs.nvidia.com/feed/"
     type: "rss"
-    category: "education"
+    category: "research"
     language: "en"
-  - name: "OpenAI Blog"
-    url: "https://openai.com/blog/rss.xml"
+  - name: "Microsoft AI Blog"
+    url: "https://blogs.microsoft.com/ai/feed/"
+    type: "rss"
+    category: "research"
+    language: "en"
+  - name: "Amazon Science"
+    url: "https://www.amazon.science/index.rss"
+    type: "rss"
+    category: "research"
+    language: "en"
+  - name: "Apple ML Research"
+    url: "https://machinelearning.apple.com/rss.xml"
+    type: "rss"
+    category: "research"
+    language: "en"
+  - name: "Meta Newsroom"
+    url: "https://about.fb.com/feed/"
+    type: "rss"
+    category: "research"
+    language: "en"
+  - name: "Google Research Blog"
+    url: "https://research.google/blog/rss/"
     type: "rss"
     category: "research"
     language: "en"
 
+  # ---- 社区 & 平台 ----
+  - name: "Hugging Face Blog"
+    url: "https://huggingface.co/blog/feed.xml"
+    type: "rss"
+    category: "research"
+    language: "en"
+  - name: "TechCrunch AI"
+    url: "https://techcrunch.com/tag/artificial-intelligence/feed/"
+    type: "rss"
+    category: "industry"
+    language: "en"
+  - name: "Reddit r/MachineLearning"
+    url: "https://www.reddit.com/r/MachineLearning/hot/.rss"
+    type: "rss"
+    category: "community"
+    language: "en"
+  - name: "Reddit r/LocalLLaMA"
+    url: "https://www.reddit.com/r/LocalLLaMA/hot/.rss"
+    type: "rss"
+    category: "community"
+    language: "en"
+
 # LLM 排行榜配置
-# 修复：原 LMSYS URL (chat.lmsys.org/api/leaderboard) 已下线；改为 lmarena.ai
 llm_rankings:
   - name: "LMSYS Chatbot Arena"
     slug: "lmsys_arena"
@@ -55,18 +101,15 @@ llm_rankings:
     category: "benchmark"
 
 # 通知配置
-# 通过 QQ bot（go-cqhttp / OneBot v11）推送
-# 必填：endpoint, group_id 或 user_id 二选一
-# 可通过环境变量覆盖：QQ_BOT_HTTP_API / QQ_BOT_TOKEN / QQ_GROUP_ID / QQ_USER_ID
 notification:
   enabled: true
   method: "qq"
   qq:
-    endpoint: "http://127.0.0.1:5700"   # go-cqhttp / napcat 默认监听地址
-    access_token: ""                       # 若 bot 端设置了 access_token，在这里填
-    group_id: ""                           # 推送到群（私聊留空）
-    user_id: ""                            # 推送到个人（群聊留空即可）
-    bot_id: ""                             # 可选，调试用
+    endpoint: "http://127.0.0.1:5700"
+    access_token: ""
+    group_id: ""
+    user_id: ""
+    bot_id: ""
     timeout: 10
 
 # 数据存储配置
